@@ -150,7 +150,7 @@ TheSyDeKick_project
             sv
             eldo
             vhdl
-            Simulations
+            simulations
                 rtlsim
             inverter
                 __init__.py   <- Python description of the entity
@@ -220,7 +220,7 @@ python3 inverter/__init__.py
 \end{lstlisting}
 %}
 \begin{itemize}
-    \item Simulation of an inverter modeled in Python, verilog, vhdö and eldo
+    \item Simulation of an inverter modeled in Python, verilog, vhdl spectre and eldo
         is executed.
     \item Press \emph{Return} to close the figures
     \item This is the elementary way of running simulations
@@ -425,7 +425,7 @@ make sim
     \frametitle{Building the documentation} 
     \begin{itemize}
         \item TheSyDeKick takes also care for you basic documentation needs
-        \item We are ysing Python Docstrings for that. You may do a web search
+        \item We are using Python Docstrings for that. You may do a web search
             to figure out what it means.
         \item Create the documentation or your module with:
 
@@ -480,7 +480,10 @@ firefox ./doc/build/html/index.html
 configure && make
 \end{lstlisting}
     \begin{itemize}
-        \item Press \emph{Return} close the figure.
+        \item Press \emph{Return} close the figure. (NOTE: Normally, you
+                should
+                NOT have the line 'input()' and the end of the self test. You
+            results should be files.)
         \item This runs the simulation and generates the documentation. 
         \item You may study the structure of \emph{configure}
         \item You are now ready to release your module:
@@ -496,7 +499,7 @@ git push
 \begin{frame}[t,fragile]
     \frametitle{Working with the submodules, again} 
     \begin{itemize}
-        \item As you are workin \emph{within the master project}
+        \item As you are working \emph{within the master project}
                 remember to update it
     \end{itemize}
 %    \adjustbox{height=0.4\textheight}{%
