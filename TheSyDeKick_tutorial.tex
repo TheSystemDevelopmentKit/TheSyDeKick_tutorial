@@ -138,19 +138,20 @@ TheSyDeKick_project
     Entities                  <- All design modules are ``entities''
         thesdk                <- The SyDeKick core entity
         rtl                   <- rtl entity for rtl simulations
-        eldo                  <- eldo entity for eldo simulations
+        spice                 <- spice entity for analog simulations
         thesdk_helpers
             shell
                 initentity.sh <- Shell script for creating new entities
-        inv_sim
+        inverter_tests
+        inverter_testbench
         inverter              <- Example entity inverter. All entities look the same
             init_submodules.sh
             configure
             doc
             sv
-            eldo
+            spice
             vhdl
-            Simulations
+            simulations      <- Temporary directory for simulation results
                 rtlsim
             inverter
                 __init__.py   <- Python description of the entity
@@ -169,9 +170,9 @@ TheSyDeKick_project
                 \emph{init\_submodules.sh}
             \item TheSydeKick entitities are transferable to any
                 TheSyDeKick project.
-            \item TheSydeKick entitities are transferable to any
+            \item TheSydeKick entities are transferable to any
                 TheSyDeKick project.
-            \item TheSydeKick entitities do not run stand-alone. They need the
+            \item TheSydeKick entities do not run stand-alone. They need the
                 project.
             \item Obey the structure. It is not yours to change.
             \item New entities are initiated with
@@ -220,8 +221,8 @@ python3 inverter/__init__.py
 \end{lstlisting}
 %}
 \begin{itemize}
-    \item Simulation of an inverter modeled in Python, verilog, vhdö and eldo
-        is executed.
+    \item Simulation of an inverter modeled in Python, verilog, vhdl and eldo
+        is executed. 
     \item Press \emph{Return} to close the figures
     \item This is the elementary way of running simulations
     \item The ''production way'' is 
