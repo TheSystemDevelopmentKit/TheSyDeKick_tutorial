@@ -1,8 +1,4 @@
-\PassOptionsToPackage{ELEC}{aaltologo}
-\documentclass[logo=bluequo,normaltitle]{aaltoslides}
-%\documentclass{aaltoslides} % DEFAULT
-%\documentclass[first=purple,second=lgreen,logo=bquo,normaltitle,nofoot]{aaltoslides} % SOME OPTION EXAMPLES
-
+\documentclass{sdkslides} 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -47,7 +43,7 @@
 \institute[MNT]{Department of Micro and Nanosciences\\
 Aalto University, School of Electrical Engineering\\marko.kosunen@aalto.fi}
 
-\aaltofootertext{Analog macro releases}{\lectdate}{\arabic{page}/\pageref{LastPage}\ }
+\sdkfootertext{Analog macro releases}{\lectdate}{\arabic{page}/\pageref{LastPage}\ }
 
 \date{\lectdate}
 
@@ -92,7 +88,7 @@ Aalto University, School of Electrical Engineering\\marko.kosunen@aalto.fi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Generates the titleframe
-\aaltotitleframe
+\sdktitleframe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,15 +102,15 @@ Aalto University, School of Electrical Engineering\\marko.kosunen@aalto.fi}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Prerequisites}
+\section*{\sectionname}
 \begin{frame}[t]
-    \frametitle{Prerequisites}
+    \frametitle{\sectionname}
     \begin{itemize}
         \item Project template is available at
             \emph{https://github.com/TheSystemDevelopmentKit/thesdk\_template}.
-        \item Alternatively you should have access to your project's
-            TheSyDeKick repository at \emph{https://bubba.ecdl.hut-fi:81}
-            \item You MUST have ssh keys set up for GitHub and ECD GitLab at
-                bubba.
+        \item If you have access to any valid, up-to-date clone of the
+            template, you can use that as well.
     \end{itemize}
 \end{frame}
 
@@ -123,8 +119,10 @@ Aalto University, School of Electrical Engineering\\marko.kosunen@aalto.fi}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Directory structures of TheSyDeKick project}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Directory structures of TheSyDeKick project}
+    \frametitle{\sectionname}
     \begin{itemize}
             \item All TheSyDeKick projects look the same
         \end{itemize}
@@ -162,8 +160,10 @@ TheSyDeKick_project
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{TheSyDeKick project structure}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{TheSyDeKick project structure} 
+    \frametitle{\sectionname} 
     \begin{itemize}
             \item All TheSyDeKick projects look the same
             \item TheSydeKick entities are git submodules initiated in the
@@ -184,8 +184,10 @@ TheSyDeKick_project
 \sectiontitle[Testing the environment]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Testing the environment}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Testing the environment} 
+    \frametitle{\sectionname} 
     \begin{itemize}
             \item To test TheSyDeKick installation, do the following
         \end{itemize}
@@ -199,8 +201,8 @@ pip3userinstall.sh
 \end{lstlisting}
 %}
 \begin{itemize}
-    \item The, \textbf{check the Python versions from Thesdk.config} file. Version 3.6 is OK
-        for ECD computing machines.
+    \item Then \textbf{check the Python versions from Thesdk.config}. Release
+        v1.10 is tested with Python 3.10.
     \item Thesdk.config is created and will be overwritten by the configure
         script. Usually no need to re-run it. 
 \end{itemize}
@@ -208,8 +210,10 @@ pip3userinstall.sh
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Testing the environment}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Testing the environment} 
+    \frametitle{\sectionname} 
     \begin{itemize}
             \item Then we test the simulation execution
         \end{itemize}
@@ -221,10 +225,11 @@ python3 inverter/__init__.py
 \end{lstlisting}
 %}
 \begin{itemize}
-    \item Simulation of an inverter modeled in Python, verilog, vhdl and eldo
-        is executed. 
+    \item Simulation of an inverter modeled in Python, verilog (icarus), vhdl
+        (ghdl) and ngspice is executed. 
     \item Press \emph{Return} to close the figures
-    \item This is the elementary way of running simulations
+    \item This is the elementary way of running simulations, i.e.you provide
+        the scriptfile to python shell.
     \item The ''production way'' is 
 \end{itemize}
 \begin{lstlisting}
@@ -238,8 +243,10 @@ python3 inverter/__init__.py
 \sectiontitle[Creating a new Entity]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Creating a new Entity}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Creating a new Entity} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item All the Entities are eventually git submodules.
         \item Go through the following steps and try to think what happens in
@@ -267,8 +274,10 @@ git push --set-upstream origin master
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Converting the new entity to submodule}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Converting the new entity to submodule} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item Go through the following steps and try to think what happens in
             in term of git submodules
@@ -291,8 +300,10 @@ git submodule add  \
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Working with the submodules}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Working with the submodules} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item If you want to edit a submodule \emph{within the master project}
                 this is how it goes
@@ -321,8 +332,10 @@ git push
 \sectiontitle[Simplifying the model to the bone]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{The simplest TheSyDeKick model}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{The most simple  TheSyDeKick model} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item The template (<my\_entity>) contains features that support
             python,eldo and rtl simulations.
@@ -332,14 +345,14 @@ git push
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t,fragile]
-    \frametitle{The target code} 
-\end{frame}
+\sectiontitle[The target code] 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{The target code}
+\section*{\sectionname}
 \setlines{21}
 \begin{frame}[t,fragile]
-    \frametitle{The target code} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item Edit the \emph{Docstring}
     \end{itemize}
@@ -347,9 +360,11 @@ git push
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{The target code}
+\section*{\sectionname}
 \nextlines[8]
 \begin{frame}[t,fragile]
-    \frametitle{The target code} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item Edit the \emph{package imports}
     \end{itemize}
@@ -357,9 +372,11 @@ git push
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{The target code}
+\section*{\sectionname}
 \nextlines[52]
 \begin{frame}[t,fragile]
-    \frametitle{The target code} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item Edit the \emph{Class definition}
     \end{itemize}
@@ -367,9 +384,11 @@ git push
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{The target code}
+\section*{\sectionname}
 \nextlines[45]
 \begin{frame}[t,fragile]
-    \frametitle{The target code} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item Edit the \emph{Main script}
     \end{itemize}
@@ -377,9 +396,11 @@ git push
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{The target code}
+\section*{\sectionname}
 \nextlines[45]
 \begin{frame}[t,fragile]
-    \frametitle{The target code} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item Now you are ready to run you model
     \end{itemize}
@@ -392,14 +413,16 @@ python3 <my_entity>/__init__.py
         \item The result should look like this:
     \end{itemize}
     \begin{center}
-        \includegraphics[width=0.6\textwidth]{./thesdk_template/Entities/myentity/myentity/inv_py.eps}
+        \includegraphics[width=0.6\textwidth]{./Pics/inv_py.eps}
     \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{The target code}
+\section*{\sectionname}
 \nextlines[45]
 \begin{frame}[t,fragile]
-    \frametitle{Running with make } 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item You can now try to run the test with the ``Production method''
     \end{itemize}
@@ -413,7 +436,7 @@ make sim
     \end{itemize}
     \begin{center}
         %This is generated by make
-        \includegraphics[width=0.6\textwidth]{./thesdk_template/Entities/myentity/myentity/inv_py.eps}
+        \includegraphics[width=0.6\textwidth]{./Pics/inv_py.eps}
     \end{center}
 \end{frame}
 
@@ -421,8 +444,10 @@ make sim
 \sectiontitle[Documentation with Doctrings]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Building the documentation}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Building the documentation} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item TheSyDeKick takes also care for you basic documentation needs
         \item We are ysing Python Docstrings for that. You may do a web search
@@ -438,8 +463,10 @@ make doc
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Reading the documentation}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Reading the documentation} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item You may read the documentation with
     \end{itemize}
@@ -460,8 +487,10 @@ firefox ./doc/build/html/index.html
 \sectiontitle[Getting production ready]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Production version}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Production version } 
+    \frametitle{\sectionname}
     \begin{itemize}
         \item To minimize the need for documentation, TheSydeKick follows the
             following principles
@@ -472,8 +501,7 @@ firefox ./doc/build/html/index.html
                 \item \emph{make} does the actual work with some functional
                     defaults, and creates the documentation.
             \end{itemize}
-        \item You should be now ready to build you module as it is in
-            production.
+        \item You are now ready to build you module for 'production' use.
     \end{itemize}
 \begin{lstlisting}
 #cd Entities/<my_entity>
@@ -493,8 +521,10 @@ git push
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\sectionname}{Working with the submodules, again}
+\section*{\sectionname}
 \begin{frame}[t,fragile]
-    \frametitle{Working with the submodules, again} 
+    \frametitle{\sectionname} 
     \begin{itemize}
         \item As you are workin \emph{within the master project}
                 remember to update it

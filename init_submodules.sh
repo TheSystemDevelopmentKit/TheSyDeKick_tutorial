@@ -3,7 +3,7 @@
 #Written by by Marko Kosunen, marko.kosunen@aalto.fi, 2017
 DIR=$( cd `dirname $0` && pwd )
 SUBMODULES="\
-    ./thesdk_template"
+    "
 
 git submodule sync
 for mod in $SUBMODULES; do 
